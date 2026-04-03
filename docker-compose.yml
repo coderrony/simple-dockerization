@@ -4,7 +4,7 @@ services:
     image: my-nginx
     container_name: nginx-container
     ports:
-      - "8080:8080"
+      - "8080:80"
     networks:
       - express-network
     depends_on:
