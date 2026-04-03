@@ -1,0 +1,20 @@
+services:
+  nginx:
+    build: ./nginx
+    image: my-nginx
+    container_name: nginx-container
+    ports:
+      - "8080:8080"
+    networks:
+      - express-network
+    depends_on:
+      - express-app
+  express-app:
+    build: ./express
+    image: my-express-app
+    container_name: express-container
+    networks:
+      - express-network
+networks:
+  express-network:
+    driver: bridge
