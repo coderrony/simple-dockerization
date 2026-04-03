@@ -10,7 +10,8 @@ services:
     depends_on:
       - express-app
   express-app:
-    build: ./express
+    build: 
+      context: .
     image: my-express-app
     container_name: express-container
     networks:
